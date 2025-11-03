@@ -27,19 +27,6 @@ const onSubmit = () => {
   });
 };
 
-const onLogin = () => {
-  authClient.signIn.email({
-    email,
-    password
-  }, {
-    onError: () => {
-      alert("Something went wrong");
-    },
-    onSuccess: () => {
-      alert("User loged in successfully");
-    }
-  });
-};
 
 if (session) {
   return (
@@ -90,7 +77,7 @@ if (session) {
           value={password} onChange={(e) => setPassword(e.target.value)}
           />
 
-        <Button onClick={onLogin}>
+        <Button onClick={onSubmit}>
           Log in
         </Button>
       </div>
